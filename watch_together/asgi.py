@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/asgi/
 
 import os
 
+from django.conf import settings
 from django.core.asgi import get_asgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'watch_together.settings')
-
+if settings.DEBUG is True:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'watch_together.settings.development')
+else:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'watch_together.settings.production')
 application = get_asgi_application()
