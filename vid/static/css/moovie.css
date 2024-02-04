@@ -7,7 +7,7 @@
   font-family: "Roboto Mono", monospace;
 }
 body {
-  background-color: #2887e3;
+  background-color: #0c0b0b;
 }
 .flex {
   display: flex;
@@ -67,7 +67,7 @@ body {
 #progress-bar {
   position: relative;
   width: 75%;
-  height: 5px;
+  height: 15px;
   background-color: #000000;
   margin: 1em 0;
   vertical-align: 2px;
@@ -83,7 +83,7 @@ body {
   position: absolute;
   left: 0;
   display: inline-block;
-  height: 5px;
+  height: 15px;
   width: 0;
   background: #2887e3;
   border-radius: 5px;
@@ -94,7 +94,7 @@ body {
   left: calc(100% - 1.5px);
   top: -2.5px;
   width: 10px;
-  height: 10px;
+  height: 20px;
   border-radius: 50%;
   background-color: #ffffff;
 }
@@ -230,4 +230,7 @@ input[type="range"]::-webkit-slider-thumb {
   .video-container {
     margin-top: 50%;
   }
+}
+.controls.hide {
+  display: none;
 }

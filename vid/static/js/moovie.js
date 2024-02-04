@@ -131,7 +131,7 @@ screenExpand.addEventListener("click", () => {
   if (isTouchDevice) {
     let screenOrientation =
       screen.orientation || screen.mozOrientation || screen.msOrientation;
-    if (screenOrientation.type == "portrait-primary") {
+    if (screenOrientation.type === "portrait-primary") {
       //update styling for fullscreen
       pauseVideo();
       rotateContainer.classList.remove("hide");
@@ -224,3 +224,33 @@ window.onload = () => {
   };
   slider();
 };
+let mouseIdleTimer;
+let controlsVisible = true;
+
+// Function to hide controls
+function hideControls() {
+  if (controlsVisible) {
+    document.querySelector(".controls").classList.add("hide");
+    controlsVisible = false;
+  }
+}
+
+// Function to show controls
+function showControls() {
+  if (!controlsVisible) {
+    document.querySelector(".controls").classList.remove("hide");
+    controlsVisible = true;
+  }
+
+  // Reset the timer for hiding controls
+  clearTimeout(mouseIdleTimer);
+  mouseIdleTimer = setTimeout(hideControls, 5000);
+}
+
+// Event listeners
+document.addEventListener("mousemove", showControls);
+document.addEventListener("keydown", showControls);
+
+document.getElementById("my-video").addEventListener("play", showControls);
+document.getElementById("my-video").addEventListener("pause", hideControls);
+document.getElementById("my-video").addEventListener("ended", hideControls);
