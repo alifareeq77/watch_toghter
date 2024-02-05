@@ -1,0 +1,90 @@
+header .text-content{
+    width: 100%;
+    margin: 100px 0 0 0 ;
+    min-height: 23vh;
+    text-align: center;
+}
+.login__inputs{
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.login__box {
+  box-sizing: border-box;
+  width: 75%;
+}
+
+
+
+.login__box {
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding-inline: 1.25rem;
+  border-radius: 4rem;
+
+}
+
+.login__input,
+.login__button {
+  border: none;
+  outline: none;
+}
+
+.login__input {
+  width: 100%;
+  background: none;
+  color: var(--white-color);
+  padding-block: 1rem;
+
+}
+
+.login__input::placeholder {
+  color: var(--white-color);
+}
+
+.login__box i {
+  font-size: 1.25rem;
+}
+
+.login__button {
+  width: 10%;
+  padding-block: 1rem;
+
+  background-color: white;
+  border-radius: 4rem;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login__button {
+  width: 10%;
+  padding-block: 1rem;
+  background-color: #ffffff; /* Neon green color, adjust as needed */
+  border-radius: 4rem;
+  color: #161515; /* Black text color for visibility */
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 0 10px #834183, 0 0 20px #660866, 0 0 30px #ebe8eb; /* Neon glow effect */
+ animation: pulse 1.5s infinite;
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.login__button:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: none; /* Remove shadow on hover */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

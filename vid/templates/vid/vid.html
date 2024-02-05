@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      {{ party.uuid|json_script:'uuid_json' }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Video Player</title>
     <!-- Font Awesome Icons -->
@@ -28,7 +29,7 @@
       <div class="video-container" id="video-container">
         <video id="my-video" preload="metadata">
           <source
-            src="https://movie.vodu.me:8888/videos/Detective_Forst_S01E01_1706092855-360.mp4"
+            src="{{ party.movie_link }}"
             type="video/mp4"
           />
           Your browser does not support the video tag

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title>Login form - Bedimcode</title>
+</head>
+<body>
+<div class="login">
+    <img src="{% static 'img/login-bg.png' %}" alt="image" class="login__bg">
+
+    <form action="" id="login__form" class="login__form" method="post">
+        {% csrf_token %}
+        <h1 class="login__title">Login</h1>
+
+        <div class="login__inputs">
+            <div class="login__box">
+                {{ form.email }}
+                <i class="ri-mail-fill"></i>
+        </div>
+
+            <div class="login__box">
+                {{ form.password }}
+                <i class="ri-lock-2-fill"></i>
+            </div>
+        </div>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="login__check">
+            <a href="#" class="login__forgot">Forgot Password?</a>
+        </div>
+
+        <button form="login__form" type="submit" class="login__button">Login</button>
+
+        <div class="login__register">
+            Don't have an account? <a href="{% url 'signup' %}">Signup</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

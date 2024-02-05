@@ -1,4 +1,5 @@
 from .base import *
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -7,3 +8,7 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+AUTH_USER_MODEL = 'users.User'
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+LOGIN_URL = "/auth/login/"

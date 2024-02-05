@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Party App</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_party.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo"><a href="{% url 'home' %}">
+            <div class="glitch"><span aria-hidden="true">Party app</span>
+                Party app
+                <span aria-hidden="true">Party app</span></div>
+        </a></div>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy & Policy</a></li>
+        </ul>
+    </nav>
+
+    <form action="" method="post" id="login__form">
+        {% csrf_token %}
+        <div class="text-content"><h2>Enter Clean Movie Link !</h2>
+            <div class="login__inputs">
+                <div class="login__box">
+                    {{ form.movie_link }}
+                    <i class="ri-mail-fill"></i>
+                </div>
+                <button form="login__form" type="submit" class="login__button">Lets GOOOOO</button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+    <div class="credit">Made with <span style="color:#00ff00">❤</span> by <a id="ali"
+                                                                             href="https://github.com/alifareeq77">Ali
+        Fareeq</a></div>
+</header>
+</body>
+</html>

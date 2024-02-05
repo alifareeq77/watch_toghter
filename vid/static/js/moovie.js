@@ -21,7 +21,7 @@ const progressBar = document.getElementById("progress-bar");
 const playbackSpeedButton = document.getElementById("playback-speed-btn");
 const playbackContainer = document.querySelector(".playback");
 const playbackSpeedOptions = document.querySelector(".playback-options");
-
+const  uuid = JSON.parse(document.getElementById('uuid_json').textContent)
 function slider() {
     valPercent = (volumeRange.value / volumeRange.max) * 100;
     volumeRange.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`;
@@ -248,7 +248,7 @@ function showControls() {
 
     // Reset the timer for hiding controls
     clearTimeout(mouseIdleTimer);
-    mouseIdleTimer = setTimeout(hideControls, 5000);
+    mouseIdleTimer = setTimeout(hideControls, 1000);
 }
 
 // Event listeners
@@ -258,7 +258,13 @@ document.addEventListener("keydown", showControls);
 myVideo.addEventListener("play", showControls);
 myVideo.addEventListener("pause", hideControls);
 myVideo.addEventListener("ended", hideControls);
-const socket = new WebSocket('ws://localhost:8000/ws/control/room/abcd/');
+const socket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/control/'
+            + uuid
+            + '/'
+        );
 // Listen for changes in video state from the server
 
 socket.onmessage = (event) => {

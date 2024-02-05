@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
+
+from party_app.models import Party
 
 
-# Create your views here.
-def index(request):
-    return render(request, 'vid/vid.html', {})
-
-
+@login_required
+def video_play(request, uuid):
+    party = get_object_or_404(Party, uuid=uuid)
+    return render(request, 'vid/vid.html', {"party": party})

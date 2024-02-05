@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    color: #fff;
+background-image: linear-gradient(to bottom, #601941, #571c49, #4c2050, #3f2455, #2f2759, #292759, #23275a, #1c275a, #24235a, #2c1e58, #341856, #3c1053)
+}
+
+
+header {
+    height: 85vh;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 12;
+    border-radius: 25px;
+    margin: auto;
+    position: relative;
+}
+
+header .navbar {
+    margin: auto;
+    width: 100%;
+    padding: 35px 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+    font-weight: 500;
+}
+
+.navbar .menu li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.navbar .menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    color: #ffe7ff;
+}
+
+.navbar .buttons input {
+    outline: none;
+    color: #ffe7ff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 6px 15px;
+    border: none;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #532d84;
+}
+
+.navbar .buttons input:hover {
+    transform: scale(0.97);
+}
+
+header .text-content {
+    width: 100%;
+    margin: 100px 0 0 50px;
+    min-height: 23vh;
+}
+
+.text-content h2 {
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.text-content p {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.credit {
+    text-align: center;
+    color: #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 100px;
+}
+
+.credit a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 850px) {
+    header .navbar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 5px;
+    }
+
+    .navbar .menu {
+        margin: 10px 0 20px 0;
+    }
+
+    header .text-content {
+        margin: 30px 0 0 20px;
+        width: 70%;
+    }
+
+    header .text-content h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 410px) {
+    header {
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    header .navbar {
+        padding: 15px 10px;
+    }
+}
+
+/* ... previous CSS code ... */
+
+.navbar .menu a:hover {
+    color: #ff00ff; /* Neon pink color, adjust as needed */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Neon glow effect */
+    animation: shake 0.5s ease infinite; /* Apply the shake animation on hover */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+/* ... rest of your CSS code ... */
+
+.glitch {
+    font-size: 28pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    color: black;
+
+    background: linear-gradient(135deg, #8100ff, #ff0081, #8100ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: glitch 500ms infinite;
+}
+
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.glitch span:first-child {
+    animation: glitch 650ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0125em);
+}
+
+.glitch span:last-child {
+    animation: glitch 375ms infinite;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(129, 0, 255, 0.75),
+        -0.05em -0.025em 0 rgba(255, 0, 129, 0.75),
+        -0.025em 0.05em 0 rgba(129, 0, 255, 0.75);
+    }
+    2%, 4%, 6% {
+        text-shadow: 0.05em 0 0 rgba(129, 0, 255, 0.75),
+        -0.05em -0.025em 0 rgba(255, 0, 129, 0.75),
+        -0.025em 0.05em 0 rgba(129, 0, 255, 0.75);
+    }
+    8%, 25%, 27%, 29% {
+        text-shadow: -0.05em -0.025em 0 rgba(129, 0, 255, 0.75),
+        0.025em 0.025em 0 rgba(255, 0, 129, 0.75),
+        -0.05em -0.05em 0 rgba(129, 0, 255, 0.75);
+    }
+    31%, 80%, 82%, 84% {
+        text-shadow: 0.025em 0.05em 0 rgba(129, 0, 255, 0.75),
+        0.05em 0 0 rgba(255, 0, 129, 0.75),
+        0 -0.05em 0 rgba(129, 0, 255, 0.75);
+    }
+    86%, 100% {
+        text-shadow: -0.025em 0 0 rgba(129, 0, 255, 0.75),
+        -0.025em -0.025em 0 rgba(255, 0, 129, 0.75),
+        -0.025em -0.05em 0 rgba(129, 0, 255, 0.75);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
+
+#ali {
+    color: #00ff00;
+}

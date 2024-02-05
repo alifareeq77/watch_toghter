@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title>Login form - Bedimcode</title>
+</head>
+<body>
+<div class="login">
+    <img src="{% static 'img/abstract-flowing-light-ombre-gradient-background-free-video.jpg' %}" alt="image" class="login__bg">
+
+    <form action="" id="login__form" class="login__form" method="post">
+        {% csrf_token %}
+        <h1 class="login__title">Sign up</h1>
+
+        <div class="login__inputs">
+            <div class="login__box">
+                {{ form.email }}
+                <i class="ri-mail-fill"></i>
+            </div>
+            <div class="login__box">
+                {{ form.password }}
+                <i class="ri-lock-2-fill"></i>
+            </div>
+
+            <div class="login__box">
+                {{ form.confirm_password }}
+                <i class="ri-lock-2-fill"></i>
+            </div>
+
+        </div>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if form.errors %}
+            <div class="error">
+                <div class=""> {{ form.errors.email.0 }}</div>
+                <div class=""> {{ form.errors.password.0 }}</div>
+                <div class=""> {{ form.errors.confirm_password.0 }}</div>
+            </div>
+        {% endif %}
+        <button form="login__form" type="submit" class="login__button">Sign Up</button>
+
+        <div class="login__register">
+            Already have an account? <a href="{% url 'login' %}">login</a>
+        </div>
+    </form>
+    <!-- Include SweetAlert script here -->
+
+
+</div>
+</body>
+</html>

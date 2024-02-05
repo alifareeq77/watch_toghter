@@ -7,7 +7,7 @@
   font-family: "Roboto Mono", monospace;
 }
 body {
-  background-color: #0c0b0b;
+  background-color: #2887e3;
 }
 .flex {
   display: flex;
@@ -177,6 +177,9 @@ input[type="range"]::-webkit-slider-thumb {
   .container {
     padding: 0;
   }
+  #my-video{
+    height: 100%;
+  }
   .video-container {
     width: 100%;
     margin: 0;
@@ -230,7 +233,4 @@ input[type="range"]::-webkit-slider-thumb {
   .video-container {
     margin-top: 50%;
   }
-}
-.controls.hide {
-  display: none;
 }

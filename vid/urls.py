@@ -3,6 +3,5 @@ from django.urls import path, include
 from vid import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path("<str:room_name>", views.chat_test, name="room"),
+    path('<uuid>', views.video_play, name='index'),
 ]

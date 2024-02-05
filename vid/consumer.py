@@ -4,13 +4,14 @@ from channels.generic.websocket import AsyncJsonWebsocketConsumer
 
 class MyConsumer(AsyncJsonWebsocketConsumer):
     async def connect(self):
-        self.room_name = self.scope["url_route"]["kwargs"]["room_name"]
-        self.room_group_name = f"control_{self.room_name}"
+        self.uuid = self.scope["url_route"]["kwargs"]["uuid"]
+        self.room_group_name = f"control_{self.uuid}"
 
         # Add the consumer to the group
         await self.channel_layer.group_add(self.room_group_name, self.channel_name)
+        if self.scope['user'].is_anonymous:
+            await self.close()
         await self.accept()
-
     async def disconnect(self, close_code):
         # Remove the consumer from the group when disconnecting
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
