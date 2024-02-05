@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Party App</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<style>
+    body {
+        background-image: url("{% static 'img/12c687db5fb0a4bfc322e8d3645a816c.png' %}");
+    }
+
+
+</style>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo"><a href="{% url 'home' %}">
+            <div class="glitch"><span aria-hidden="true">Party app</span>
+                Party app
+                <span aria-hidden="true">Party app</span></div>
+        </a></div>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="/service">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-and-policy">Privacy & Policy</a></li>
+        </ul>
+        {% if not user.is_authenticated %}
+            <div class="buttons" onclick="window.location.href='{% url 'login' %}'"><input type="button" value="login">
+            </div>
+        {% else %}
+            <div class="buttons" onclick="window.location.href='{% url 'create_party' %}'"><input type="button"
+                                                                                                  value="Start !"></div>
+        {% endif %}
+
+    </nav>
+    <div class="text-content">
+        <h1>Sorry the page were not found :(</h1>
+    </div>
+    <br>
+    <div class="credit" style="margin-top: 30vh">Made with <span style="color:#ff00ff">❤</span> by <a id="ali"
+                                                                             href="https://github.com/alifareeq77">Ali
+        Fareeq</a></div>
+</header>
+</body>
+</html>

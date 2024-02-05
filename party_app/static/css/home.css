@@ -91,7 +91,7 @@ header .navbar {
 
 header .text-content {
     width: 100%;
-    margin: 100px 0 0 50px;
+    margin: 0 0 0 50px;
     min-height: 23vh;
 }
 
@@ -109,7 +109,7 @@ header .text-content {
     text-align: center;
     color: #000;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 100px;
+    margin-top: 10vh;
 }
 
 .credit a {

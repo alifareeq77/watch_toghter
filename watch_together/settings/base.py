@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django_bootstrap5",
 ]
 MIDDLEWARE = [
+    'watch_together.middleware.Custom404Middleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

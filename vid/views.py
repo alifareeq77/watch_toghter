@@ -7,4 +7,4 @@ from party_app.models import Party
 @login_required
 def video_play(request, uuid):
     party = get_object_or_404(Party, uuid=uuid)
-    return render(request, 'vid/vid.html', {"party": party})
+    return render(request, 'vid/video.html', {"party": party})
