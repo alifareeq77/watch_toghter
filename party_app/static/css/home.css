@@ -75,17 +75,18 @@ header .navbar {
     color: #ffe7ff;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 12px;
+    border-radius: 4rem;
     padding: 6px 15px;
-    border: none;
+    border: 2px solid #ff00ff; /* Neon pink border color, adjust as needed */
+    background: transparent; /* Transparent background */
     margin: 0 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: #532d84;
 }
 
 .navbar .buttons input:hover {
     transform: scale(0.97);
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Neon glow effect on hover */
 }
 
 header .text-content {
@@ -248,5 +249,5 @@ header .text-content {
 }
 
 #ali {
-    color: #00ff00;
+    color: #FF00FFFF;
 }

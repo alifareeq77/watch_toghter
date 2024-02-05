@@ -24,7 +24,7 @@ const playbackSpeedOptions = document.querySelector(".playback-options");
 const  uuid = JSON.parse(document.getElementById('uuid_json').textContent)
 function slider() {
     valPercent = (volumeRange.value / volumeRange.max) * 100;
-    volumeRange.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`;
+    volumeRange.style.background = `linear-gradient(to right, #FF00FFFF ${valPercent}%, #000000 ${valPercent}%)`;
 }
 
 //events object
@@ -248,7 +248,7 @@ function showControls() {
 
     // Reset the timer for hiding controls
     clearTimeout(mouseIdleTimer);
-    mouseIdleTimer = setTimeout(hideControls, 1000);
+    mouseIdleTimer = setTimeout(hideControls, 1500);
 }
 
 // Event listeners

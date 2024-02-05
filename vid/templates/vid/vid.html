@@ -16,9 +16,30 @@
       rel="stylesheet"
     />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/moovie.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/moovie.css' %}" />
+      <style>
+          body{
+              background: #1b0d39;
+          }
+      </style>
   </head>
+
   <body>
+  <header>
+    <nav class="navbar">
+        <div class="logo"><a href="{% url 'home' %}">
+            <div class="glitch"><span aria-hidden="true">Party app</span>
+                Party app
+                <span aria-hidden="true">Party app</span></div>
+        </a></div>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy & Policy</a></li>
+        </ul>
+    </nav>
     <div class="container">
       <div class="rotate-container hide">
         <div id="rotate-icon">
@@ -102,6 +123,15 @@
         </div>
       </div>
     </div>
+    <br>
+    <div class="credit">Made with <span style="color:#ff00ff">❤</span> by <a id="ali"
+                                                                             href="https://github.com/alifareeq77">Ali
+        Fareeq</a></div>
+</header>
+
+
+
+
     <!-- Script -->
     <script src="{% static 'js/moovie.js' %}"></script>
   </body>
